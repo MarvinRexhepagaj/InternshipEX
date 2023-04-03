@@ -1,12 +1,17 @@
 package com.session_1.model;
 
+import java.util.EnumSet;
+import java.util.Set;
+
 public enum Answer {
-
     AGREE,
+    SLIGHTLY_AGREE,
+    SLIGHTLY_DISAGREE,
+    DISAGREE;
 
-    SLIGHTY_AGREE,
+    public static Set<Answer> getValidAnswers() {
+        return EnumSet.allOf(Answer.class);
+    }
 
-    SLIGHTY_DISAGREE,
 
-    DISAGREE,
 }

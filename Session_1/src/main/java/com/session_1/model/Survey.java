@@ -1,6 +1,8 @@
 package com.session_1.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Survey {
 
@@ -9,6 +11,7 @@ public class Survey {
     private String description;
 
     private List<Question> questions;
+    Map<Candidate, Map<String, SurveyResult>> candidates = new HashMap<>();
 
     public Survey(String title, String topic, String description, List<Question> questions) {
         this.title = title;

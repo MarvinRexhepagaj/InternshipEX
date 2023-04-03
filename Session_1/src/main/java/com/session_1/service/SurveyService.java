@@ -1,30 +1,49 @@
 package com.session_1.service;
 
+import com.session_1.model.Answer;
+import com.session_1.model.Candidate;
 import com.session_1.model.Question;
 import com.session_1.model.Survey;
 
-import java.util.List;
+import java.util.Map;
 
 public interface SurveyService {
 
-    List<Survey> getAllSurveys();
-    Survey getSurveyById(int id);
-    boolean saveSurvey(Survey survey);
-    boolean deleteSurveyById(int id);
+
+    Map<String, Survey> getSurveys();
+
+
+
+
+
+
+    abstract void editSurvey();
 
 
 
 
     boolean validateSurvey(Survey survey);
 
-
-
-
-    Survey createNewSurvey();
+    boolean addQuestion(Survey survey, Question question);
 
     boolean deleteQuestion(Survey survey, Question question);
 
+    Survey createNewSurvey();
+
+    void addCandidate(Candidate candidate, Survey survey, Map<Question, Answer> answers);
+
+
+    void takeSurvey(Survey survey);
+
+
+    void printSurveyResults();
+
 
 }
+
+
+
+
+
 
 
